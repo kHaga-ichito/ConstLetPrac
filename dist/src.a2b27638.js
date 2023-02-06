@@ -188,23 +188,111 @@ parcelRequire = (function (modules, cache, entry, globalName) {
  * アロー関数
  */
 
-// 従来の関数
-var func1 = function func1(str) {
-  return str;
-};
+// // 従来の関数
+// const func1 = function (str) {
+//   return str;
+// };
 
-// console.log(func1("func1です"));
+// // console.log(func1("func1です"));
 
-// アロー関数
-var func2 = function func2(str) {
-  return str;
-};
-// console.log(func2("func2です"));
+// // アロー関数
+// const func2 = (str) => {
+//   return str;
+// };
+// // console.log(func2("func2です"));
 
-var func3 = function func3(num1, num2) {
-  return num1 + num2;
-};
-console.log(func3(1, 14334343));
+// const func3 = (num1, num2) => {
+//   return num1 + num2;
+// };
+
+// console.log(func3(1, 14334343));
+
+/**
+ * 分割代入
+ */
+// const myProfile = {
+//   name: "かず",
+//   age: 28
+// };
+// // const message1 = `私の名前は${myProfile.name}です。${myProfile.age}歳です。`
+
+// // console.log(message2);
+// const {name, age} = myProfile;
+// const message2 = `私の名前は${name}です。${age}歳です。`
+
+// console.log(message2);
+
+// const myProfile = ['かず', 28];
+// const message3 = `名前は${myProfile[0]}です。${myProfile[1]}歳です。`;
+// console.log(message3);
+
+/**
+ * デフォルト値
+ */
+// const sayHello = (name = "誰か") => console.log(`こんにちは！${name}さん！`);
+
+// sayHello();
+/**
+ * スプレッド構文
+ */
+// // 配列の展開
+// // const arr1 = [1, 2, 10];
+// // // console.log(arr1);
+// // // console.log(...arr1);
+// // const sumFunc = (num1, num2, num3) => console.log((num1 + num2) * num3);
+// // sumFunc(...arr1);
+
+// // まとめる
+// // const arr2 = [1, 2, 3, 4, 5];
+// // const [num1, num2, ...arr3] = arr2;
+// // console.log(num1);
+// // console.log(num2);
+// // console.log(arr3);
+
+// // 配列のコピー・結合
+// const arr4 = [10, 20];
+// const arr5 = [30, 40];
+
+// // コピー
+// // const arr6 = [...arr4];
+// // // console.log(arr4);
+// // console.log(arr6);
+// // const arr7 = [...arr4, ...arr5];
+// // console.log(arr7);
+// const arr8 = arr4;
+// arr4[0] *= 100;
+// console.log(arr8);
+
+/**
+ * mapやfilterを使った処理
+ */
+var nameArr = ["田中", "山田", "渡部"];
+// for (let index = 0; index < nameArr.length; index++) {
+//   console.log(nameArr[index]);
+// }
+
+// const nameArr2 = nameArr.map((name) => {
+//   return name;
+// });
+
+// console.log(nameArr2);
+// const numArr = [1, 2, 3, 4, 5];
+// const newNumArr = numArr.filter((num) => {
+//   return num % 2 === 0;
+// });
+// console.log(newNumArr);
+// nameArr.map((name, index) =>
+//   console.log(`${index + 1}番目は${name}さんでーす。`)
+
+// );
+var newNameArr = nameArr.map(function (name) {
+  if (name === "渡部") {
+    return name;
+  } else {
+    return "".concat(name, "\u3055\u3093");
+  }
+});
+console.log(newNameArr);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -230,7 +318,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41301" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45099" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
